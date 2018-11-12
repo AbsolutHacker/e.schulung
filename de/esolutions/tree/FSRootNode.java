@@ -3,7 +3,7 @@ package de.esolutions.tree;
 import java.io.File;
 
 public class FSRootNode extends FSDirectory {
-    public FSRootNode(File dir) throws IgnoredDirectory {
+    public FSRootNode(File dir) {
         super(dir, null);
     }
     @Override
