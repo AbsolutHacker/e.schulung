@@ -19,7 +19,7 @@ public class FSDirectory extends FSNode implements NodeContainer {
             if (!f.isDirectory()) {
                 children.add(new FSNode(f, this));
             } else {
-                if (!Arrays.asList(f.list()).contains("_ignore")) {
+                if (!Arrays.asList(f.list()).contains(IGNOREFILE)) {
                     children.add(new FSDirectory(f, this));
                 }
             }
