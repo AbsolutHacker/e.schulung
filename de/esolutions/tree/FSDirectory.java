@@ -1,6 +1,7 @@
 package de.esolutions.tree;
 
 import java.io.File;
+import java.nio.file.NoSuchFileException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -8,7 +9,7 @@ import java.util.List;
 public class FSDirectory extends FSNode implements NodeContainer {
     List<Node> children;
 
-    public FSDirectory(File dir, NodeContainer parent) {
+    public FSDirectory(File dir, NodeContainer parent) throws NoSuchFileException, IllegalArgumentException {
         super(dir, parent);
         if (!dir.isDirectory()) {
             throw new IllegalArgumentException("Directory node '" + dir.getName() + "' must be a directory.");

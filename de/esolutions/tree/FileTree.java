@@ -1,21 +1,21 @@
 package de.esolutions.tree;
 
 import java.io.File;
+import java.nio.file.NoSuchFileException;
 
 public class FileTree {
     FSRootNode root;
     private String prefix;
 
-    public FileTree() {
+    public FileTree() throws NoSuchFileException, IllegalArgumentException {
         this(".");
     }
-    public FileTree(String path) {
-        try {
+    public FileTree(String path) throws NoSuchFileException, IllegalArgumentException {
             root = new FSRootNode(new File(path));
             prefix = "";
-        } catch (FSDirectory.IgnoredDirectory e) {
-
-        }
+    }
+    public FSRootNode getRoot() {
+        return root;
     }
     public void printFileTree() {
             printTree(root);

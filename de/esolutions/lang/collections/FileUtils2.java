@@ -56,10 +56,6 @@ public class FileUtils2 {
             return reader;
         } catch (FileNotFoundException fnfExc) {
             System.out.println("File not found: " + fileName);
-        } catch (IOException ioExc) {
-            System.out.println("Unhandled IO exception encountered.");
-            System.out.println(ioExc.getMessage());
-            ioExc.printStackTrace();
         }
         return null;
     }

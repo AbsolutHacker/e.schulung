@@ -1,9 +1,10 @@
 package de.esolutions.tree;
 
 import java.io.File;
+import java.nio.file.NoSuchFileException;
 
 public class FSRootNode extends FSDirectory {
-    public FSRootNode(File dir) {
+    public FSRootNode(File dir) throws NoSuchFileException, IllegalArgumentException {
         super(dir, null);
     }
     @Override
