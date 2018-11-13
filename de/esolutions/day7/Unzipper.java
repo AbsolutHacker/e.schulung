@@ -1,4 +1,4 @@
-package de.esolutions.lang;
+package de.esolutions.day7;
 
 import java.io.*;
 import java.util.zip.ZipEntry;
@@ -33,7 +33,7 @@ public class Unzipper {
         byte[] copyBuffer = new byte[BUFFER_SIZE];
         int bytesRead = 0;
         while ((bytesRead = in.read(copyBuffer)) != -1) {
-            out.write(copyBuffer);
+            out.write(copyBuffer, 0, bytesRead);
         }
     }
 }
