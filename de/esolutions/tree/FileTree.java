@@ -10,12 +10,8 @@ public class FileTree {
         this(".");
     }
     public FileTree(String path) {
-        try {
-            root = new FSRootNode(new File(path));
-            prefix = "";
-        } catch (FSDirectory.IgnoredDirectory e) {
-
-        }
+        prefix = "";
+        root = new FSRootNode(new File(path));
     }
     public void printFileTree() {
             printTree(root);
